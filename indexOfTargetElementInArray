@@ -1,0 +1,22 @@
+import java.sql.Array;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.*;
+public class rec2 {
+    public static void main (String[] ae){
+        int[] arr={1,2,3,4,4,4,5,};
+        int target=4;
+        ArrayList<Integer> ans=allIndex(arr,target,0,new ArrayList<>());
+        System.out.println(ans);
+    }
+    static ArrayList<Integer> allIndex(int[] arr,int target,int index,ArrayList<Integer> list){
+        if(index==arr.length){
+            return list;
+        }
+        if(arr[index]==target){
+            list.add(index);
+        }
+        return allIndex(arr,target,index+1,list);
+
+    }
+}
