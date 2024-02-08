@@ -1,0 +1,26 @@
+package Strings;
+import java.util.*;
+import java.lang.String;
+public class Stringsubset {
+    public static void main(String[] ae){
+        Scanner sc =new Scanner(System.in);
+        String str1=sc.nextLine();
+        skip("",str1);
+
+    }
+    static void skip(String p, String up){
+        if(up.isEmpty()){
+            System.out.println(p);
+            return;
+        }
+        else{
+            if(up.charAt(0)=='a'){
+                skip(p,up.substring(1));
+            }
+            else{
+                skip(p+up.charAt(0) , up.substring(1));
+            }
+        }
+    }
+}
+
