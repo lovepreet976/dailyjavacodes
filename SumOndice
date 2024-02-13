@@ -1,0 +1,19 @@
+package Strings;
+import java.util.ArrayList;
+public class SumOndice {
+    public static void main(String[] args) {
+        func(5,"");
+
+    }
+    static void func(int target,String p){
+        if(target==0){
+            System.out.println(p);
+
+        }
+        for(int i=1;i<=target && i<=6;i++){
+            ArrayList<String> list =new ArrayList<>();
+          func(target-i,p+i);
+
+        }
+    }
+}
