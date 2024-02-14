@@ -1,1 +1,42 @@
+package Strings;
+import java.util.*;
+import java.lang.String;
+public class Maze
+{
+    public static void main(String[] args) {
+        System.out.println(count(3,3));
+        countsubsets(" ",3,3);
+        System.out.println(countsubsetsAL(" ",3,3));
+    }
+   static int count(int r,int c){
+        if(r==1 || c==1){
+            return 1;
+        }
+        int left=count(r,c-1);
+        int right=count(r-1,c);
+        return left+right;
+    }
+    static void countsubsets(String p,int r,int c)
+    {
+        if(r==1 && c==1){
+            System.out.println(p);
+            return ;
+        }
+        if(r>1){ countsubsets(p+'D',r-1,c);}
+       if(c>1){countsubsets(p+'R',r,c-1);}
+
+    }
+    static ArrayList<String> countsubsetsAL(String p,int r,int c)
+    {
+        if(r==1 && c==1){
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p);
+            return list ;
+        }
+        ArrayList<String> list = new ArrayList<>();
+        if(r>1){ list.addAll(countsubsetsAL(p+'D',r-1,c));}
+        if(c>1){list.addAll(countsubsetsAL(p+'R',r,c-1));}
+return list;
+    }
+}
 
