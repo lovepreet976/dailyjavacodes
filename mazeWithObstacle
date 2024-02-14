@@ -1,1 +1,24 @@
 
+package Strings;
+import java.util.*;
+import java.lang.String;
+public class Maze
+{
+    public static void main(String[] args) {
+boolean[][] maze={ {true,false,true},
+                   {true,false,true},
+                   {true,true,true}};
+pathRes(0,0,"",maze);
+    }
+   static void pathRes(int r,int c,String p,boolean[][] maze){
+    if(c==maze.length-1 && r==maze[0].length -1){
+        System.out.println(p);
+    return;}
+   if(!maze[r][c]){
+       return;}
+    if(c<maze.length-1){
+    pathRes(r,c+1,'D'+p,maze);}
+    if(r<maze[0].length-1){
+        pathRes(r+1,c,'R'+p,maze);
+    }
+       }}
